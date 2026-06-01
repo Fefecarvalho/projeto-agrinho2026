@@ -1,1 +1,190 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES E IDENTIDADE VISUAL (Estilo Natureza Sustentável)
+   ========================================================================== */
+:root {
+    --cor-principal: #02992a;       /* Verde Vivo */
+    --cor-secundaria: #022b0d;      /* Verde Escuro */
+    --cor-fundo: #f4fbf7;           /* Fundo Suave Claro */
+    --cor-texto: #212529;           /* Grafite Escuro */
+    --cor-botao: #0b6623;           /* Verde Folha */
+    --cor-botao-hover: #044214;     /* Verde Intenso */
+    --cor-card-bg: #ffffff;         /* Fundo dos Cards */
+    --cor-borda: #d1ebd9;           /* Borda Orgânica Macia */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --radius-organico: 16px;         /* Cantos bem arredondados (natureza) */
+    --shadow-suave: 0 6px 15px rgba(0, 0, 0, 0.05);
+    --transition-padrao: all 0.3s ease;
+}
 
+/* Alterações para o Modo Escuro */
+body.dark-mode {
+    --cor-fundo: #121b15;
+    --cor-texto: #e8f5ed;
+    --cor-card-bg: #1a261f;
+    --cor-borda: #2d4235;
+    --cor-principal: #39e767;
+}
+
+/* ==========================================================================
+   RESETS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave de link interno */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    transition: var(--transition-padrao);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Utilitários Flexbox/Grid flexíveis */
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.flex-column { display: flex; flex-direction: column; }
+.flex-row { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-sm { gap: 10px; }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+.font-bold { font-weight: bold; }
+
+/* ==========================================================================
+   CABEÇALHO E MENU
+   ========================================================================== */
+.header {
+    background-color: var(--cor-card-bg);
+    border-bottom: 2px solid var(--cor-borda);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-suave);
+    transition: var(--transition-padrao);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+    font-weight: 800;
+}
+body.dark-mode .logo { color: var(--cor-principal); }
+
+.logo span {
+    color: var(--cor-principal);
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-padrao);
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.nav a:hover {
+    color: var(--cor-principal);
+    background-color: var(--cor-fundo);
+}
+
+.header-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    background: none;
+    border: 1px solid var(--cor-borda);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: var(--transition-padrao);
+    background-color: var(--cor-fundo);
+}
+
+.btn-icon:hover {
+    transform: scale(1.1);
+}
+
+.hamburger {
+    display: none; /* Escondido por padrão na versão desktop */
+}
+
+/* ==========================================================================
+   BANNER PRINCIPAL
+   ========================================================================== */
+.banner {
+    background: linear-gradient(135deg, rgba(2, 43, 13, 0.85), rgba(11, 102, 35, 0.7)), 
+                url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-suave);
+}
+
+.banner-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.banner p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+/* ==========================================================================
+   SEÇÕES, CARDS E GRIDS
+   ========================================================================== */
+.section-card {
+    background-color: var(--cor-card-bg);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--radius-organico);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-suave);
+    transition: var(--transition-padrao);
+}
+
+.section-title {
+    color: var(--cor-secundaria);
+    font-size: 1.
