@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('nav-menu');
 
     menuToggleBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active'); // Você pode estilizar .nav.active no CSS para mostrar o menu mobile
+        navMenu.classList.toggle('active');
     });
 
     // Fecha o menu ao clicar em qualquer link dele
@@ -45,8 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % carouselItems.length;
-        showSlide(currentSlide);
+        if (carouselItems.length > 0) {
+            currentSlide = (currentSlide + 1) % carouselItems.length;
+            showSlide(currentSlide);
+        }
     }
 
     // Troca de slide a cada 4 segundos
@@ -85,17 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             question: "O que os drones fazem principalmente no agronegócio moderno?",
-            options: ["Transportam a colheita pesada", "Mapeiam pragas e falhas nutricionais", "Substituem os tratores guiados por GPS"]
+            options: ["Transportam a colheita pesada", "Mapeiam pragas e falhas nutricionais", "Substituem os tratores guiados por GPS"],
+            correct: 1
         },
         {
             question: "Qual o destino correto das embalagens de defensivos agrícolas?",
-            options: ["Queimar na propriedade", "Descarte no lixo comum", "Logística reversa (devolução correta)"]
+            options: ["Queimar na propriedade", "Descarte no lixo comum", "Logística reversa (devolução correta)"],
+            correct: 2
         }
     ];
-
-    // Ajuste da segunda e terceira resposta correta no array (índices correspondentes)
-    quizQuestions[1].correct = 1;
-    quizQuestions[2].correct = 2;
 
     let currentQuestionIndex = 0;
     const quizQuestionEl = document.getElementById('quiz-question');
@@ -127,11 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentQuiz = quizQuestions[currentQuestionIndex];
         const buttons = quizOptionsEl.querySelectorAll('button');
 
-        // Desabilita os botões após a escolha
         buttons.forEach(btn => btn.disabled = true);
 
         if (selectedIndex === currentQuiz.correct) {
-            quizFeedbackEl.textContent = "Correct! Excelente escolha.";
+            quizFeedbackEl.textContent = "Correto! Excelente escolha.";
             quizFeedbackEl.style.color = "var(--cor-principal)";
         } else {
             quizFeedbackEl.textContent = `Errado. A resposta correta era: ${currentQuiz.options[currentQuiz.correct]}`;
@@ -167,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Simulação: Economia média estimada de 15 litros por metro quadrado por semana
         const economiaLitros = area * 15;
 
         calcResult.innerHTML = `<strong>Resultado:</strong> Utilizando sensores e gotejamento na sua área de <strong>${area}m²</strong>, você economizará aproximadamente <strong>${economiaLitros.toLocaleString('pt-BR')} litros</strong> de água por semana!`;
