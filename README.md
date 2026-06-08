@@ -38,3 +38,7 @@ Para garantir que o ecossistema do site funcione perfeitamente, certifique-se de
 ├── style.css        # Identidade visual, regras de layout e Modo Escuro
 ├── script.js        # Toda a inteligência, interatividade e lógica do sistema
 └── README.md        # Documentação e guia do projeto (este arquivo)
+
+## 📝 Créditos e Atribuições
+* **Imagens de fundo:** Obtidas gratuitamente através do banco de imagens Unsplash.
+* **Textos e Base de Código:** Desenvolvidos de forma autoral com o auxílio do assistente de IA Gemini (Prompt utilizado: *"Ajude-me a estruturar um painel interativo em JS com quiz, calculadora de água e simulador de clima focado no tema agronegócio sustentável"*).
